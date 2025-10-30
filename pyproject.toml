@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "aplyer"
+version = "0.1.0"
+description = "A distributed task runner that is light & fast"
+authors = ["Vlad Nedelcu <nedelcuvd@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "aplyer", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+msgpack = "^1.1.2"
+pydantic = "^2.12.3"
+redis = "^7.0.1"
+typer = "^0.20.0"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.4.2"
+
+
+[tool.poetry.group.dev.dependencies]
+isort = "^7.0.0"
+black = "^25.9.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+aplyer = "aplyer.cli:app"
